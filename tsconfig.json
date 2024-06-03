@@ -1,0 +1,20 @@
+{
+    "tsx": {
+        "require": ["tsconfig-paths/register"]
+    },
+    "compilerOptions": {
+        "module": "CommonJS",
+        "target": "ESNext",
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "baseUrl": ".",
+        "typeRoots": ["node_modules/@types", "Environment/Interface/@types"],
+        "paths": {
+            "@Environment": ["Environment/Infrastructure.ts"],
+            "@Core": ["Core/Infrastructure.ts"],
+            "@Database": ["Database/Infrastructure.ts"]
+        }
+    },
+    "include": ["**/*"]
+}

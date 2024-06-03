@@ -1,0 +1,27 @@
+# ========================================
+# Syphia Sistem Ayarları
+# Cartel tarafından geliştirildi
+# ========================================
+
+
+Developer: 
+  Name: "Cartel"
+  ID: "264241301199781891"
+  TotalShards: 1
+
+Secret: ""
+
+Signature: ""
+
+Presence:
+  Status: "idle" 
+  Message: 
+    - "✨ Syphia Music"
+    - "🌙 /play"
+
+EmojiSystem:
+  TargetGuild: ""
+  
+
+Database:
+  URL: ""

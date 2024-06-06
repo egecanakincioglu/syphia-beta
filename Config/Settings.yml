@@ -3,25 +3,23 @@
 # Cartel tarafından geliştirildi
 # ========================================
 
-
-Developer: 
-  Name: "Cartel"
-  ID: "264241301199781891"
+Developer:
+  Name: 'Cartel'
+  ID: '264241301199781891'
   TotalShards: 1
 
-Secret: ""
+Secret: ''
 
-Signature: ""
+Signature: ''
 
 Presence:
-  Status: "idle" 
-  Message: 
-    - "✨ Syphia Music"
-    - "🌙 /play"
+  Status: 'idle'
+  Message:
+    - '✨ Syphia Music'
+    - '🌙 /play'
 
 EmojiSystem:
-  TargetGuild: ""
-  
+  TargetGuild: ''
 
 Database:
-  URL: ""
+  URL: ''

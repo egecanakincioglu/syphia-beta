@@ -1,6 +1,5 @@
-import { MusicEventGen } from "@Environment";
-import { Queue, Song } from "distube";
-import { GuildTextBasedChannel } from "discord.js";
+import { MusicEventGen } from '@Environment';
+import { GuildTextBasedChannel } from 'discord.js';
 
 export default new MusicEventGen({
   Category: 'error',
@@ -8,4 +7,4 @@ export default new MusicEventGen({
     channel.send(`:negative_squared_cross_mark: | An error encountered: ${error.toString().slice(0, 1974)}`);
     console.error(error);
   }
-})
+});

@@ -8,12 +8,8 @@ export default new CommandGen({
   SlashCommandGen: new SlashCommandBuilder()
     .setName('volume')
     .setDescription(Cmd.Description)
-    .addIntegerOption(option =>
-      option.setName(Cmd.Options.Name)
-        .setDescription(Cmd.Options.Description)
-        .setRequired(false)),
+    .addIntegerOption((option) => option.setName(Cmd.Options.Name).setDescription(Cmd.Options.Description).setRequired(false)),
   Execute: async (interaction) => {
-
     const AyumiHata = await getEmoji('AyumiHata');
     const Ayumis = await getEmoji('AyumiMessage');
     const KlauSes = await getEmoji('KlausSes');
@@ -26,7 +22,7 @@ export default new CommandGen({
 
       const voiceChannel = member.voice.channel;
       const botVoiceChannel = interaction.guild.members.me?.voice?.channel;
-      
+
       if (botVoiceChannel && botVoiceChannel.id !== voiceChannel.id) {
         return response.edit(bold(`${Ayumis}${AyumiHata} Filter komutunu kullanabilmek için bot ile aynı kanalda olmalısınız!`));
       }
@@ -54,5 +50,5 @@ export default new CommandGen({
     } catch (error) {
       console.error(error);
     }
-  },
+  }
 });

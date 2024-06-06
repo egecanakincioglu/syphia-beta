@@ -1,5 +1,5 @@
-import { MusicEventGen } from "@Environment";
-import { Message } from "discord.js";
+import { MusicEventGen } from '@Environment';
+import { Message } from 'discord.js';
 
 export default new MusicEventGen({
   Category: 'searchNoResult',
@@ -7,4 +7,4 @@ export default new MusicEventGen({
     message.channel.send(`:negative_squared_cross_mark: | No result found for \`${query}\`!`);
     console.error('channel is not defined for the message:', message);
   }
-})
+});

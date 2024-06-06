@@ -7,10 +7,7 @@ export default new CommandGen({
   SlashCommandGen: new SlashCommandBuilder()
     .setName('seek')
     .setDescription(Cmd.Description)
-    .addIntegerOption(option =>
-      option.setName(Cmd.Options.Name)
-        .setDescription(Cmd.Options.Description)
-        .setRequired(true)),
+    .addIntegerOption((option) => option.setName(Cmd.Options.Name).setDescription(Cmd.Options.Description).setRequired(true)),
   Execute: async (interaction) => {
     const AyumiHata = await getEmoji('AyumiHata');
     const Ayumis = await getEmoji('AyumiMessage');
@@ -21,7 +18,7 @@ export default new CommandGen({
 
       const voiceChannel = member.voice.channel;
       const botVoiceChannel = interaction.guild.members.me?.voice?.channel;
-      
+
       if (botVoiceChannel && botVoiceChannel.id !== voiceChannel.id) {
         return response.edit(bold(`${Ayumis}${AyumiHata} Seek komutunu kullanabilmek için bot ile aynı kanalda olmalısınız!`));
       }
@@ -49,9 +46,8 @@ export default new CommandGen({
       queue.seek(seekTime);
 
       return response.edit(bold(`${Ayumis}:fast_forward: ${Cmd.Success} \`${seekTime}\``));
-
     } catch (error) {
       console.error(error);
     }
-  },
+  }
 });

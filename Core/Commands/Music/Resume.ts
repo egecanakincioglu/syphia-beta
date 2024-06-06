@@ -4,9 +4,7 @@ import { CommandGen, PlayerHandler, Strings, getEmoji } from '@Environment';
 const Cmd = new Strings().getResume;
 
 export default new CommandGen({
-  SlashCommandGen: new SlashCommandBuilder()
-    .setName('resume')
-    .setDescription(Cmd.Description),
+  SlashCommandGen: new SlashCommandBuilder().setName('resume').setDescription(Cmd.Description),
   Execute: async (interaction) => {
     const response = await interaction.deferReply({ ephemeral: false });
     const AyumiHata = await getEmoji('AyumiHata');
@@ -18,7 +16,7 @@ export default new CommandGen({
 
       const voiceChannel = member.voice.channel;
       const botVoiceChannel = interaction.guild.members.me?.voice?.channel;
-      
+
       if (botVoiceChannel && botVoiceChannel.id !== voiceChannel.id) {
         return response.edit(bold(`${Ayumis}${AyumiHata} Resume komutunu kullanabilmek için bot ile aynı kanalda olmalısınız!`));
       }
@@ -34,15 +32,14 @@ export default new CommandGen({
       }
 
       if (queue.playing) {
-        return response.edit(bold(`${Ayumis}${AyumiHata} ${Cmd.AlreadyPlaying}`))
+        return response.edit(bold(`${Ayumis}${AyumiHata} ${Cmd.AlreadyPlaying}`));
       }
 
       PlayerHandler.Player.resume(interaction.guildId);
 
       return response.edit(bold(`${Ayumis}${KlausPlay} ${Cmd.Resumed}`));
-
     } catch (error) {
       console.error(error);
     }
-  },
+  }
 });

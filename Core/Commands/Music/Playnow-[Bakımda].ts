@@ -7,11 +7,7 @@ export default new CommandGen({
   SlashCommandGen: new SlashCommandBuilder()
     .setName('playnow')
     .setDescription(Cmd.Description)
-    .addStringOption(option =>
-      option.setName(Cmd.Options.Name)
-        .setDescription(Cmd.Options.Description)
-        .setRequired(true)
-    ),
+    .addStringOption((option) => option.setName(Cmd.Options.Name).setDescription(Cmd.Options.Description).setRequired(true)),
   Execute: async (interaction) => {
     const songQuery = interaction.options.getString(Cmd.Options.Name);
     const response = await interaction.deferReply({ ephemeral: false });
@@ -23,7 +19,7 @@ export default new CommandGen({
 
       const voiceChannel = member.voice.channel;
       const botVoiceChannel = interaction.guild.members.me?.voice?.channel;
-      
+
       if (botVoiceChannel && botVoiceChannel.id !== voiceChannel.id) {
         return response.edit(bold(`${Ayumis}${AyumiHata} Playnow komutunu kullanabilmek için bot ile aynı kanalda olmalısınız!`));
       }
@@ -53,12 +49,12 @@ export default new CommandGen({
       if (queue && queue.playing) {
         PlayerHandler.Player.stop(interaction.guildId);
       }
-      
+
       await PlayerHandler.Player.play(voiceChannel, songQuery, { textChannel: interaction.channel, member: interaction.member as GuildMember });
 
       return PlayerHandler.interactionMap.set(queue.id, response);
     } catch (error) {
       console.error(error);
     }
-  },
+  }
 });

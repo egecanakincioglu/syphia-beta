@@ -7,11 +7,7 @@ export default new CommandGen({
   SlashCommandGen: new SlashCommandBuilder()
     .setName('remove')
     .setDescription(Cmd.Description)
-    .addIntegerOption(option =>
-      option.setName(Cmd.Options.Name)
-        .setDescription(Cmd.Options.Description)
-        .setRequired(true)
-    ),
+    .addIntegerOption((option) => option.setName(Cmd.Options.Name).setDescription(Cmd.Options.Description).setRequired(true)),
   Execute: async (interaction) => {
     const removeIndex = interaction.options.getInteger(Cmd.Options.Name);
     const response = await interaction.deferReply({ ephemeral: false });
@@ -23,7 +19,7 @@ export default new CommandGen({
 
       const voiceChannel = member.voice.channel;
       const botVoiceChannel = interaction.guild.members.me?.voice?.channel;
-      
+
       if (botVoiceChannel && botVoiceChannel.id !== voiceChannel.id) {
         return response.edit(bold(`${Ayumis}${AyumiHata} Remove komutunu kullanabilmek için bot ile aynı kanalda olmalısınız!`));
       }
@@ -43,12 +39,12 @@ export default new CommandGen({
       }
 
       const removedSong = queue.songs[removeIndex - 1];
-      queue.songs = queue.songs.filter((song, index) => index !== (removeIndex - 1));
+      queue.songs = queue.songs.filter((song, index) => index !== removeIndex - 1);
       PlayerHandler.Player.queues.collection.set(queue.id, queue);
 
       return response.edit(bold(`${Ayumis} ${Cmd.Success} Removed: ${removedSong.name}`));
     } catch (error) {
       console.error(error);
     }
-  },
+  }
 });

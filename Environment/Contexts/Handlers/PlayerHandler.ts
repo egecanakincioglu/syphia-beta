@@ -9,12 +9,7 @@ export class PlayerHandler {
   private static client: Client;
   public static Player: DisTube;
   public static interactionMap = new Map<string, InteractionResponse | ChatInputCommandInteraction | ButtonInteraction>();
-  public static Plugins = [
-    new SpotifyPlugin({ emitEventsAfterFetching: true }),
-    new SoundCloudPlugin(),
-    new YtDlpPlugin(), 
-    new DeezerPlugin()
-  ]
+  public static Plugins = [new SpotifyPlugin({ emitEventsAfterFetching: true }), new SoundCloudPlugin(), new YtDlpPlugin(), new DeezerPlugin()];
 
   public static PlayerManager(client: Client): void {
     PlayerHandler.client = client;
@@ -25,7 +20,7 @@ export class PlayerHandler {
       emitNewSongOnly: true,
       emitAddSongWhenCreatingQueue: false,
       emitAddListWhenCreatingQueue: false,
-      plugins: this.Plugins,
+      plugins: this.Plugins
     });
   }
 }

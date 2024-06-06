@@ -1,8 +1,8 @@
-import { Logger, MusicEventGen, PlayerHandler, PlayerInterface, getEmoji } from "@Environment";
-import { Queue, Song } from "distube";
-import { ButtonInteraction, ChatInputCommandInteraction, ComponentType, bold } from 'discord.js'; 
-import { createTimeout } from "Environment/Functions/Util";
-import { PrivateGuildSettings } from "@Database";
+import { Logger, MusicEventGen, PlayerHandler, getEmoji } from '@Environment';
+import { Queue, Song } from 'distube';
+import { ButtonInteraction, ChatInputCommandInteraction, bold } from 'discord.js';
+import { createTimeout } from 'Environment/Functions/Util';
+import { PrivateGuildSettings } from '@Database';
 
 export default new MusicEventGen({
   Category: 'playSong',

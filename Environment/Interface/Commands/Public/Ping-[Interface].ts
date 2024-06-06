@@ -1,25 +1,20 @@
-import { EmbedBuilder, bold } from "discord.js";
-import { Strings } from "@Environment";
+import { EmbedBuilder, bold } from 'discord.js';
+import { Strings } from '@Environment';
 
 export class PingInterface {
-    public static PingEmbed = new EmbedBuilder();
-    
-    public static async ReplacePing() {
-        const Cmd = new Strings().getPing;
-        const Emojis = new Strings().getUnicodeEmojis
+  public static PingEmbed = new EmbedBuilder();
 
-        this.PingEmbed = new EmbedBuilder();
+  public static async ReplacePing() {
+    const Cmd = new Strings().getPing;
+    const Emojis = new Strings().getUnicodeEmojis;
 
-        const DescriptionMessages: string[] = [
-            `${Emojis.Info} ${Cmd.Messages[0]}`,
-            `${Emojis.Decorator} ${Cmd.Messages[1]}`
-        ];
+    this.PingEmbed = new EmbedBuilder();
 
-        return {
-            PingEmbed: this.PingEmbed
-                .setTitle(Cmd.Title)
-                .setDescription(bold(DescriptionMessages.join("\n\n"))),
-            PingDescription: DescriptionMessages
-        }
-    }
+    const DescriptionMessages: string[] = [`${Emojis.Info} ${Cmd.Messages[0]}`, `${Emojis.Decorator} ${Cmd.Messages[1]}`];
+
+    return {
+      PingEmbed: this.PingEmbed.setTitle(Cmd.Title).setDescription(bold(DescriptionMessages.join('\n\n'))),
+      PingDescription: DescriptionMessages
+    };
+  }
 }

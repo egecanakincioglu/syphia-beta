@@ -1,6 +1,6 @@
-import { MusicEventGen, Strings, getEmoji } from "@Environment";
-import { bold } from "discord.js";
-import { Queue, Song } from "distube";
+import { MusicEventGen, Strings, getEmoji } from '@Environment';
+import { bold } from 'discord.js';
+import { Queue } from 'distube';
 
 export default new MusicEventGen({
   Category: 'finish',
@@ -10,4 +10,4 @@ export default new MusicEventGen({
     const Music = await getEmoji('SyphiaMusic');
     await queue.textChannel.send(bold(`${Reply}${Music} ${Cmd.NoQueue}`));
   }
-})
+});

@@ -7,10 +7,7 @@ export default new CommandGen({
   SlashCommandGen: new SlashCommandBuilder()
     .setName('forward')
     .setDescription(Cmd.Description)
-    .addIntegerOption(option =>
-      option.setName(Cmd.Options.Name)
-        .setDescription(Cmd.Options.Description)
-        .setRequired(true)),
+    .addIntegerOption((option) => option.setName(Cmd.Options.Name).setDescription(Cmd.Options.Description).setRequired(true)),
   Execute: async (interaction) => {
     const response = await interaction.deferReply({ ephemeral: false });
     const AyumiHata = await getEmoji('AyumiHata');
@@ -21,7 +18,7 @@ export default new CommandGen({
 
       const voiceChannel = member.voice.channel;
       const botVoiceChannel = interaction.guild.members.me?.voice?.channel;
-      
+
       if (botVoiceChannel && botVoiceChannel.id !== voiceChannel.id) {
         return response.edit(bold(`${Ayumis}${AyumiHata} Forward komutunu kullanabilmek için bot ile aynı kanalda olmalısınız!`));
       }
@@ -49,9 +46,8 @@ export default new CommandGen({
       PlayerHandler.Player.seek(interaction.guildId, queue.currentTime + seekTime);
 
       return response.edit(bold(`${Ayumis}:fast_forward: ${Cmd.Response[0]} \`${seekTime}\` ${Cmd.Response[1]}`));
-
     } catch (error) {
       console.error(error);
     }
-  },
+  }
 });

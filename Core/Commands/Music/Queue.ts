@@ -6,13 +6,11 @@ const Cmd = new Strings().getQueue;
 const pageLimit = 10;
 
 export default new CommandGen({
-  SlashCommandGen: new SlashCommandBuilder()
-    .setName('queue')
-    .setDescription(Cmd.Description),
+  SlashCommandGen: new SlashCommandBuilder().setName('queue').setDescription(Cmd.Description),
   Execute: async (interaction) => {
     const AyumiHata = await getEmoji('AyumiHata');
-    const AyumiMusic = await getEmoji('AyumiMusic')
-    const AyumiOnay = await getEmoji('AyumiOnay')
+    const AyumiMusic = await getEmoji('AyumiMusic');
+    const AyumiOnay = await getEmoji('AyumiOnay');
     const response = await interaction.deferReply({ ephemeral: false });
 
     try {
@@ -29,14 +27,8 @@ export default new CommandGen({
       const currentSongs = queue.songs.slice(startIdx, endIdx);
       const embed = generateQueueEmbed(interaction, currentSongs, page, totalPages, queue, AyumiMusic);
       const row = new ActionRowBuilder<ButtonBuilder>().addComponents(
-        new ButtonBuilder()
-          .setCustomId('previous')
-          .setLabel('Previous page')
-          .setStyle(ButtonStyle.Danger),
-        new ButtonBuilder()
-          .setCustomId('next')
-          .setLabel('Next page')
-          .setStyle(ButtonStyle.Success)
+        new ButtonBuilder().setCustomId('previous').setLabel('Previous page').setStyle(ButtonStyle.Danger),
+        new ButtonBuilder().setCustomId('next').setLabel('Next page').setStyle(ButtonStyle.Success)
       );
 
       await response.edit({ embeds: [embed], components: [row] });
@@ -72,15 +64,24 @@ export default new CommandGen({
     } catch (error) {
       console.error(error);
     }
-  },
+  }
 });
 
 function generateQueueEmbed(interaction, songs: Song[], page: number, totalPages: number, queue, AyumiMusic) {
   const embed = new EmbedBuilder()
     .setTitle(`Queue for ${interaction.guild.name}`)
-    .setDescription(songs.map((song, index) => `\`${(page - 1) * pageLimit + index + 1}.\` **[${song.name}](${song.url}) | \`${song.formattedDuration} Requested by: ${song.user.displayName}\`**`).join('\n') + `\n` + bold(`${AyumiMusic} ${queue.songs.length} songs in queue | ${queue.formattedDuration} total length`))
+    .setDescription(
+      songs
+        .map((song, index) => `\`${(page - 1) * pageLimit + index + 1}.\` **[${song.name}](${song.url}) | \`${song.formattedDuration} Requested by: ${song.user.displayName}\`**`)
+        .join('\n') +
+        `\n` +
+        bold(`${AyumiMusic} ${queue.songs.length} songs in queue | ${queue.formattedDuration} total length`)
+    )
     .setThumbnail(interaction.guild.iconURL())
-    .setFooter({ text: `Page ${page}/${totalPages} | Loop Mode: ${queue.repeatMode ? (queue.repeatMode >= 1 ? `✅` : `✅`) : `❌`} | Autoplay: ${queue.autoplay ? `✅` : `❌`}`, iconURL: interaction.user.avatarURL() })
+    .setFooter({
+      text: `Page ${page}/${totalPages} | Loop Mode: ${queue.repeatMode ? (queue.repeatMode >= 1 ? `✅` : `✅`) : `❌`} | Autoplay: ${queue.autoplay ? `✅` : `❌`}`,
+      iconURL: interaction.user.avatarURL()
+    });
 
   return embed;
 }

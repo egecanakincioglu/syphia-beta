@@ -1,26 +1,26 @@
-import { StatusTypes } from "./Presence";
+import { StatusTypes } from './Presence';
 
 export interface SettingsData {
-    Developer: {
-        Name: string;
-        ID: string;
-        TotalShards: number;
-    }
+  Developer: {
+    Name: string;
+    ID: string;
+    TotalShards: number;
+  };
 
-    Secret: string;
+  Secret: string;
 
-    Signature: string;
+  Signature: string;
 
-    Presence: {
-        Status: StatusTypes;
-        Message: string[];
-    }
-    
-    EmojiSystem: {
-        TargetGuild: string;
-    }
+  Presence: {
+    Status: StatusTypes;
+    Message: string[];
+  };
 
-    Database: {
-        URL: string;
-    }
+  EmojiSystem: {
+    TargetGuild: string;
+  };
+
+  Database: {
+    URL: string;
+  };
 }

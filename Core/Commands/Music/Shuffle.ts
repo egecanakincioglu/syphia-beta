@@ -4,9 +4,7 @@ import { CommandGen, PlayerHandler, Strings, getEmoji } from '@Environment';
 const Cmd = new Strings().getShuffle;
 
 export default new CommandGen({
-  SlashCommandGen: new SlashCommandBuilder()
-    .setName('shuffle')
-    .setDescription(Cmd.Description),
+  SlashCommandGen: new SlashCommandBuilder().setName('shuffle').setDescription(Cmd.Description),
   Execute: async (interaction) => {
     const response = await interaction.deferReply({ ephemeral: false });
     const AyumiHata = await getEmoji('AyumiHata');
@@ -18,7 +16,7 @@ export default new CommandGen({
 
       const voiceChannel = member.voice.channel;
       const botVoiceChannel = interaction.guild.members.me?.voice?.channel;
-      
+
       if (botVoiceChannel && botVoiceChannel.id !== voiceChannel.id) {
         return response.edit(bold(`${Ayumis}${AyumiHata} Shuffle komutunu kullanabilmek için bot ile aynı kanalda olmalısınız!`));
       }
@@ -34,5 +32,5 @@ export default new CommandGen({
     } catch (error) {
       console.error(error);
     }
-  },
+  }
 });

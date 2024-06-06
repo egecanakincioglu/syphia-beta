@@ -3,214 +3,213 @@
 # Cartel tarafından geliştirildi
 # ========================================
 
-
 # Syphia'nın içerisinde bulunan ve sistem tarafından kullanılan tüm metinleri bu dosya içerisinden değiştirebilirsiniz
 # YAML\YML Kurallarına dikkat ettiğiniz sürece hiç bir problemle karşılaşmayacaksınız
 
 UnicodeEmojis:
-  Error: "❌"
-  Thinking: "🤔"
-  Searching: "🔎"
-  ThumbsUp: "👍🏻"
-  Page: "📄"
-  Musical: "🎶"
-  Radio: "🔘"
-  SongLenght: "—"
-  Warn: "❗️"
-  Leave: "🛑"
-  Denied: "🚫"
-  Award: "🎖"
-  CheckMark: "✅"
-  Decorator: "✶"
-  Info: "🌀"
-  Ping: "⏱️"
-  Settings: "⚙️"
+  Error: '❌'
+  Thinking: '🤔'
+  Searching: '🔎'
+  ThumbsUp: '👍🏻'
+  Page: '📄'
+  Musical: '🎶'
+  Radio: '🔘'
+  SongLenght: '—'
+  Warn: '❗️'
+  Leave: '🛑'
+  Denied: '🚫'
+  Award: '🎖'
+  CheckMark: '✅'
+  Decorator: '✶'
+  Info: '🌀'
+  Ping: '⏱️'
+  Settings: '⚙️'
 
 Presence:
-  Guilds: "Guilds"  
-  Users: "Users"
+  Guilds: 'Guilds'
+  Users: 'Users'
 
 General:
-  NoChannel: "This command can only be used in audio channels!" #NoVoice
-  NoSong: "To use this command, you need to play a track first!"
-  NoPlaying: "To use this command, you need to start the music!"
-  NoBotChannel: "Syphia is not currently on any audio channel!"
-  NoQueue: "There are no songs left in the queue!"
-  StageNotAllowed: "This command cannot be used in stage channels"
-  DifferentChannel: "You must be on the same channel with me to play songs" # ChannelNotAllowed
-  NoPause: "This operation cannot be performed while the song is paused." # NotPlaying
+  NoChannel: 'This command can only be used in audio channels!' #NoVoice
+  NoSong: 'To use this command, you need to play a track first!'
+  NoPlaying: 'To use this command, you need to start the music!'
+  NoBotChannel: 'Syphia is not currently on any audio channel!'
+  NoQueue: 'There are no songs left in the queue!'
+  StageNotAllowed: 'This command cannot be used in stage channels'
+  DifferentChannel: 'You must be on the same channel with me to play songs' # ChannelNotAllowed
+  NoPause: 'This operation cannot be performed while the song is paused.' # NotPlaying
 
 Autoplay:
-  Description: "Turns autoplay on or off"
+  Description: 'Turns autoplay on or off'
   Options:
-    Name: "status"
-    Description: "Specify autoplay status"
-    On: "On"
-    Off: "Off"
-  Title: "Syphia Autoplay Menu"
-  Messages: 
-    - "**Information:** Welcome to the autoplay information menu. If you use commands that skip or stop the song being played, such as the `/skip` command when there is no song in the queue, the autoplay mode is automatically turned off."
-    - "You can use this command to change the autoplay mode"
-    - "Auto play feature"
-  Footer: "requested by"
-  Invalid: "You must specify a valid condition"
-  Error: "An error occurred. Please try again"
+    Name: 'status'
+    Description: 'Specify autoplay status'
+    On: 'On'
+    Off: 'Off'
+  Title: 'Syphia Autoplay Menu'
+  Messages:
+    - '**Information:** Welcome to the autoplay information menu. If you use commands that skip or stop the song being played, such as the `/skip` command when there is no song in the queue, the autoplay mode is automatically turned off.'
+    - 'You can use this command to change the autoplay mode'
+    - 'Auto play feature'
+  Footer: 'requested by'
+  Invalid: 'You must specify a valid condition'
+  Error: 'An error occurred. Please try again'
   Status:
-    Enabled: "Enabled"
-    Disabled: "Disabled"
+    Enabled: 'Enabled'
+    Disabled: 'Disabled'
 
 Forward:
-  Description: "Advances the playing track by the specified time"
+  Description: 'Advances the playing track by the specified time'
   Options:
-    Name: "seconds"
-    Description: "Specify how many seconds to advance"
-  InvalidTime: "You must specify a valid roll forward time"
-  Response: 
-    - "Track"
-    - "seconds forwarded"
+    Name: 'seconds'
+    Description: 'Specify how many seconds to advance'
+  InvalidTime: 'You must specify a valid roll forward time'
+  Response:
+    - 'Track'
+    - 'seconds forwarded'
 
 Join:
-  Description: "Calls Syphia to the current voice channel"
-  AlreadyPlaying: "Syphia is currently playing a song. It cannot be connected to another channel."
+  Description: 'Calls Syphia to the current voice channel'
+  AlreadyPlaying: 'Syphia is currently playing a song. It cannot be connected to another channel.'
   Joined:
-    - "Syphia"
-    - "joined the channel"
-  AlreadyJoined: "Syphia is already connected to an audio channel"
-  AlreadyWithYou: "Syphia is already on the same channel as you"
+    - 'Syphia'
+    - 'joined the channel'
+  AlreadyJoined: 'Syphia is already connected to an audio channel'
+  AlreadyWithYou: 'Syphia is already on the same channel as you'
 
 Leave:
-  Description: "Syphianın bulunduğunuz ses kanalından ayrılmasını sağlar"
-  OnlyWithBot: "You must be on the same voice channel as Syphia"
+  Description: 'Syphianın bulunduğunuz ses kanalından ayrılmasını sağlar'
+  OnlyWithBot: 'You must be on the same voice channel as Syphia'
   Leaved:
-    - "Syphia"
-    - "left the channel"
+    - 'Syphia'
+    - 'left the channel'
 
 Loop:
-  Description: "Manages options to repeat music or sequence"
+  Description: 'Manages options to repeat music or sequence'
   Options:
-    Name: "mode"
-    Description: "Specify the mode to repeat a single track or sequence"
-    Track: "Track"
-    Queue: "Queue"
-    Disable: "Disable"
+    Name: 'mode'
+    Description: 'Specify the mode to repeat a single track or sequence'
+    Track: 'Track'
+    Queue: 'Queue'
+    Disable: 'Disable'
   LoopString:
-    Enabled: "Enabled"
-    Disabled: "Dsiabled"
+    Enabled: 'Enabled'
+    Disabled: 'Dsiabled'
   LoopDisabled: "Repeat mode 'turned off'"
-  InvalidMode: "You must specify a valid repeat mode"
-  TrackLoop: "Track repeat mode"
-  QueueLoop: "Queue repeat mode"
+  InvalidMode: 'You must specify a valid repeat mode'
+  TrackLoop: 'Track repeat mode'
+  QueueLoop: 'Queue repeat mode'
 
 Pause:
-  Description: "Pauses the music Syphia is playing"
-  Paused: "Music paused"
+  Description: 'Pauses the music Syphia is playing'
+  Paused: 'Music paused'
 
 Play:
-  Description: "Plays the specified song"
+  Description: 'Plays the specified song'
   Options:
-    Name: "track"
-    Description: "Specify the name or URL of the song to play"
-  Joinable: "I do not have permission to connect to the channel"
-  Speakable: "I do not have permission to speak on the channel I will connect to."
+    Name: 'track'
+    Description: 'Specify the name or URL of the song to play'
+  Joinable: 'I do not have permission to connect to the channel'
+  Speakable: 'I do not have permission to speak on the channel I will connect to.'
 
 Resume:
-  Description: "Resumes paused music"
-  AlreadyPlaying: "Music is already playing"
-  Resumed: "The music continues"
+  Description: 'Resumes paused music'
+  AlreadyPlaying: 'Music is already playing'
+  Resumed: 'The music continues'
 
 Rewind:
-  Description: "Rewinds the played track by the specified time"
-  Options: 
-    Name: "seconds"
-    Description: "Specify how many seconds to rewind"
-  InvalidTime: "You must specify a valid rollback period"
-  Rewinded: 
-    - "Track"
-    - "saniye rewinded"
+  Description: 'Rewinds the played track by the specified time'
+  Options:
+    Name: 'seconds'
+    Description: 'Specify how many seconds to rewind'
+  InvalidTime: 'You must specify a valid rollback period'
+  Rewinded:
+    - 'Track'
+    - 'saniye rewinded'
 
 Skip:
-  Description: "Skips the currently playing song"
-  Skipped: "Skipping track:"
+  Description: 'Skips the currently playing song'
+  Skipped: 'Skipping track:'
 
 Stop:
-  Description: "Pauses the current song and clears the queue"
-  Stopped: "The current song is stopped and the queue is cleared"
+  Description: 'Pauses the current song and clears the queue'
+  Stopped: 'The current song is stopped and the queue is cleared'
 
 Volume:
-  Description: "You can use it to adjust or view the volume within the server"
-  Options: 
-    Name: "level"
-    Description: "You can adjust the volume by entering a value between 0 and 100"
+  Description: 'You can use it to adjust or view the volume within the server'
+  Options:
+    Name: 'level'
+    Description: 'You can adjust the volume by entering a value between 0 and 100'
   InvalidVolume: "Volume must be between '0 and 100'"
-  VolumeSet: 
-    - "Sound level"
-    - "was set to"
-  AvaibleVolume: "Current volume:"
+  VolumeSet:
+    - 'Sound level'
+    - 'was set to'
+  AvaibleVolume: 'Current volume:'
 
-Ping: 
+Ping:
   Description: "Reflects the bot's ping to the server"
-  ButtonLabel: "Monitor Ping"
-  Footer: "Monitor Ping"
-  ClientPing: 
-    - "Client Ping:"
-    - "ms"
-  Completed: "Measurement completed!"
-  Timeout: "The time given to take measurements has expired. Button Closed!"
-  Title: "Syphia Ping Menu"
+  ButtonLabel: 'Monitor Ping'
+  Footer: 'Monitor Ping'
+  ClientPing:
+    - 'Client Ping:'
+    - 'ms'
+  Completed: 'Measurement completed!'
+  Timeout: 'The time given to take measurements has expired. Button Closed!'
+  Title: 'Syphia Ping Menu'
   Messages:
-   - "Welcome to Syphia's ping menu. If you think Syphia has a problem with the internet, you can check."
-   - "The button will be disabled within 30 seconds."
+    - "Welcome to Syphia's ping menu. If you think Syphia has a problem with the internet, you can check."
+    - 'The button will be disabled within 30 seconds.'
 
 Queue:
-  Description: "Displays next songs"
-  EmptyQueue: "There are no songs next."
+  Description: 'Displays next songs'
+  EmptyQueue: 'There are no songs next.'
 
 Filter:
-  Description: "Edits filters applied to the current song"
+  Description: 'Edits filters applied to the current song'
   Options:
-    Name: "filter"
-    Description: "Filter to choose"
-  FilterEnabled: "Filter turned on:"
-  FilterDeleted: "Filtre turned off:"
-  FilterDisabled: "All filters are turned off."
-  InvalidFilter: "Filter not found!"
+    Name: 'filter'
+    Description: 'Filter to choose'
+  FilterEnabled: 'Filter turned on:'
+  FilterDeleted: 'Filtre turned off:'
+  FilterDisabled: 'All filters are turned off.'
+  InvalidFilter: 'Filter not found!'
 
 SkipTo:
-  Description: "Skip to a song in the list"
+  Description: 'Skip to a song in the list'
   Options:
-    Name: "track"
-    Description: "List order of the song to be played"
-  EmptyQueue: "There are no songs next."
-  InvalidIndex: "There is no song in the desired order."
+    Name: 'track'
+    Description: 'List order of the song to be played'
+  EmptyQueue: 'There are no songs next.'
+  InvalidIndex: 'There is no song in the desired order.'
   CurrentSong: "You can't skip to the currently playing song."
-  Success: "The song was skipped successfully, the song now played is:"
+  Success: 'The song was skipped successfully, the song now played is:'
 
 Remove:
-  Description: "Deletes the selected next song from the list"
+  Description: 'Deletes the selected next song from the list'
   Options:
-    Name: "track"
-    Description: "List order of the song to be deleted"
-  EmptyQueue: "There are no songs next."
-  InvalidIndex: "There is no song in the desired order."
-  Success: "Song removed:"
+    Name: 'track'
+    Description: 'List order of the song to be deleted'
+  EmptyQueue: 'There are no songs next.'
+  InvalidIndex: 'There is no song in the desired order.'
+  Success: 'Song removed:'
 
 Seek:
-  Description: "Goes to the desired duration of the song"
+  Description: 'Goes to the desired duration of the song'
   Options:
-    Name: "time"
-    Description: "Time to play in seconds"
-  InvalidTime: "The requested duration is longer or shorter than the duration of the song."
-  Success: "The specified minute was reached:"
+    Name: 'time'
+    Description: 'Time to play in seconds'
+  InvalidTime: 'The requested duration is longer or shorter than the duration of the song.'
+  Success: 'The specified minute was reached:'
 
 Shuffle:
-  Description: "Shuffles songs in the list"
-  ShuffleEnabled: "The songs during the server were shuffled"
+  Description: 'Shuffles songs in the list'
+  ShuffleEnabled: 'The songs during the server were shuffled'
 
 PlayNow:
-  Description: "Plays the desired song instantly"
-  Options: 
-    Name: "track"
-    Description: "List order of the song to be played"
-  Joinable: "I do not have permission to connect to the channel"
-  Speakable: "I do not have permission to speak on the channel I will connect to."
-  Success: "Success"
+  Description: 'Plays the desired song instantly'
+  Options:
+    Name: 'track'
+    Description: 'List order of the song to be played'
+  Joinable: 'I do not have permission to connect to the channel'
+  Speakable: 'I do not have permission to speak on the channel I will connect to.'
+  Success: 'Success'

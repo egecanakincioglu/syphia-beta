@@ -4,9 +4,7 @@ import { CommandGen, PlayerHandler, Strings, getEmoji } from '@Environment';
 const Cmd = new Strings().getPause;
 
 export default new CommandGen({
-  SlashCommandGen: new SlashCommandBuilder()
-    .setName('pause')
-    .setDescription(Cmd.Description),
+  SlashCommandGen: new SlashCommandBuilder().setName('pause').setDescription(Cmd.Description),
   Execute: async (interaction) => {
     const response = await interaction.deferReply({ ephemeral: false });
     const AyumiHata = await getEmoji('AyumiHata');
@@ -18,7 +16,7 @@ export default new CommandGen({
 
       const voiceChannel = member.voice.channel;
       const botVoiceChannel = interaction.guild.members.me?.voice?.channel;
-      
+
       if (botVoiceChannel && botVoiceChannel.id !== voiceChannel.id) {
         return response.edit(bold(`${Ayumis}${AyumiHata} Pause komutunu kullanabilmek için bot ile aynı kanalda olmalısınız!`));
       }
@@ -36,9 +34,8 @@ export default new CommandGen({
       PlayerHandler.Player.pause(interaction.guildId);
 
       return response.edit(bold(`${Ayumis}${KlausPlay} ${Cmd.Paused}`));
-
     } catch (error) {
       console.error(error);
     }
-  },
+  }
 });

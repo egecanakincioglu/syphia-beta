@@ -4,12 +4,10 @@ import { CommandGen, PlayerHandler, Strings, getEmoji } from '@Environment';
 const Cmd = new Strings().getLeave;
 
 export default new CommandGen({
-  SlashCommandGen: new SlashCommandBuilder()
-    .setName('leave')
-    .setDescription(Cmd.Description),
+  SlashCommandGen: new SlashCommandBuilder().setName('leave').setDescription(Cmd.Description),
   Execute: async (interaction) => {
     const response = await interaction.deferReply({ ephemeral: false });
-    
+
     const AyumiHata = await getEmoji('AyumiHata');
     const Ayumis = await getEmoji('AyumiMessage');
 
@@ -21,7 +19,7 @@ export default new CommandGen({
       }
 
       const voiceChannel = member.voice.channel as VoiceChannel;
-      
+
       const botVoiceChannel = interaction.guild?.members.me.voice.channel;
 
       if (!botVoiceChannel) {
@@ -34,9 +32,8 @@ export default new CommandGen({
 
       await PlayerHandler.Player.voices.leave(voiceChannel);
       return response.edit(bold(`${Ayumis}${await getEmoji('AyumiLeave')} ${Cmd.Leaved[0]} \`${voiceChannel.name}\` ${Cmd.Leaved[1]}`));
-
     } catch (error) {
       console.error(error);
     }
-  },
+  }
 });

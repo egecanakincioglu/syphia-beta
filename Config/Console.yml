@@ -6,24 +6,24 @@
 # Botun içerisinde bulunan ve konsol tarafından gösterilen her şeyi bu dosya içerisinden değiştirebilirsiniz.
 # YAML\YML Kurallarına dikkat ettiğiniz sürece hiç bir problemle karşılaşmayacaksınız.
 
-Logger: 
-  Info: "INFO"
-  Warn: "WARN"
-  Error: "ERROR"
+Logger:
+  Info: 'INFO'
+  Warn: 'WARN'
+  Error: 'ERROR'
 
 Console:
-  Prefix: "SYPHIA MUSIC"
+  Prefix: 'SYPHIA MUSIC'
 
 EmojiSynchronization:
-  NoGuild: "The specified server could not be found."
-  SyncComplete: "Emoji syncing is complete."
-  Error: "An error occurred:"
-  Added: "Emoji added:"
-  
-LoginMessages: 
-  Music: "Music infrastructure is connected!"
-  Database: "Database connection established!"
-  Presence: "Status link complete!"
-  Emojis: "Emojis are loading..."
-  Events: "Events are loading..."
-  Commands: "Commands are loading..."
+  NoGuild: 'The specified server could not be found.'
+  SyncComplete: 'Emoji syncing is complete.'
+  Error: 'An error occurred:'
+  Added: 'Emoji added:'
+
+LoginMessages:
+  Music: 'Music infrastructure is connected!'
+  Database: 'Database connection established!'
+  Presence: 'Status link complete!'
+  Emojis: 'Emojis are loading...'
+  Events: 'Events are loading...'
+  Commands: 'Commands are loading...'

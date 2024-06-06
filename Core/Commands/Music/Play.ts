@@ -9,11 +9,7 @@ export default new CommandGen({
   SlashCommandGen: new SlashCommandBuilder()
     .setName('play')
     .setDescription(Cmd.Description)
-    .addStringOption(option =>
-      option.setName(Cmd.Options.Name)
-        .setDescription(Cmd.Options.Description)
-        .setRequired(true)
-    ),
+    .addStringOption((option) => option.setName(Cmd.Options.Name).setDescription(Cmd.Options.Description).setRequired(true)),
   Execute: async (interaction) => {
     const songQuery = interaction.options.getString(Cmd.Options.Name);
     const response = await interaction.deferReply({ ephemeral: false });
@@ -54,5 +50,5 @@ export default new CommandGen({
     } catch (error) {
       console.error(error);
     }
-  },
+  }
 });

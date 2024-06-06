@@ -1,7 +1,10 @@
-type Awaitable<Input> = Input | Promise<Input>
+type Awaitable<Input> = Input | Promise<Input>;
 
-type NullishStatementSuccessFunction<Input, Inputs extends readonly unknown[] = readonly unknown[]> = (input: Input, builder: StatementBuilder) => Awaitable<StatementBuilder<Inputs>>;
-type NormalStatementFunction<Input> = (input: Input) => Awaitable<boolean>; 
+type NullishStatementSuccessFunction<Input, Inputs extends readonly unknown[] = readonly unknown[]> = (
+  input: Input,
+  builder: StatementBuilder
+) => Awaitable<StatementBuilder<Inputs>>;
+type NormalStatementFunction<Input> = (input: Input) => Awaitable<boolean>;
 
 interface NullishStatementOption<Input, Inputs extends readonly unknown[] = readonly unknown[]> {
   type: StatementType.Nullish;
@@ -16,14 +19,14 @@ interface NormalStatementOption<Input> {
 }
 
 interface NullishStatement<Input, Inputs extends readonly unknown[] = readonly unknown[]> extends NullishStatementOption<Input, Inputs> {
-  input: Input
-};
-
-interface NormalStatement<Input> extends NormalStatementOption<Input> {
-  input: Input,
+  input: Input;
 }
 
-type StatementOption<Input> = NormalStatementOption<Input> | NullishStatementOption<Input>
+interface NormalStatement<Input> extends NormalStatementOption<Input> {
+  input: Input;
+}
+
+type StatementOption<Input> = NormalStatementOption<Input> | NullishStatementOption<Input>;
 type Statement<Input extends unknown> = NormalStatement<Input> | NullishStatement<Input>;
 
 type StatementExecuteResultData<Inputs extends readonly unknown[]> = {
@@ -43,13 +46,13 @@ interface StatementExecuteSuccess<Data extends readonly unknown[]> {
 type StatementExecuteResult<Data extends readonly unknown[]> = StatementExecuteFail | StatementExecuteSuccess<Data>;
 
 export enum StatementExecuteStatus {
-  Fail = "fail",
-  Success = "success",
+  Fail = 'fail',
+  Success = 'success'
 }
 
 enum StatementType {
-  Normal = "normal",
-  Nullish = "nullish",
+  Normal = 'normal',
+  Nullish = 'nullish'
 }
 
 interface NullishStatementInput<Input extends unknown = unknown, Inputs extends readonly unknown[] = unknown[]> {
@@ -69,11 +72,14 @@ export class StatementBuilder<Inputs extends readonly unknown[] = []> {
     return new StatementBuilder<[...Inputs, Input]>([...this.builders, options]);
   }
 
-  public addNullishStatement<Input, SubInputs extends readonly unknown[]>(input: Input, errorMessage: string, onSuccess?: NullishStatementSuccessFunction<Input, SubInputs>): StatementBuilder<[...Inputs, NullishStatementInput<Input, SubInputs>]> {
+  public addNullishStatement<Input, SubInputs extends readonly unknown[]>(
+    input: Input,
+    errorMessage: string,
+    onSuccess?: NullishStatementSuccessFunction<Input, SubInputs>
+  ): StatementBuilder<[...Inputs, NullishStatementInput<Input, SubInputs>]> {
     const options: NullishStatement<Input, SubInputs> = { input, type: StatementType.Nullish, errorMessage, onSuccess };
     return new StatementBuilder<[...Inputs, NullishStatementInput<Input, SubInputs>]>([...this.builders, options]);
   }
-
 
   public async execute(): Promise<StatementExecuteResult<Inputs>> {
     let error: string | undefined;
@@ -117,17 +123,19 @@ export class StatementBuilder<Inputs extends readonly unknown[] = []> {
     if (error !== undefined) {
       return {
         status: StatementExecuteStatus.Fail,
-        errorMessage: error,
-      }
+        errorMessage: error
+      };
     }
 
     return {
       status: StatementExecuteStatus.Success,
-      data: this.mapResult(resultData) as StatementExecuteResultData<Inputs>,
-    }
+      data: this.mapResult(resultData) as StatementExecuteResultData<Inputs>
+    };
   }
 
   private mapResult(input: unknown[]) {
-    return input.map((i) => i !== null && typeof i === "object" && "status" in i && "data" in i && Array.isArray(i.data) && i.status === StatementExecuteStatus.Success ? [i, this.mapResult(i.data)] : i);
+    return input.map((i) =>
+      i !== null && typeof i === 'object' && 'status' in i && 'data' in i && Array.isArray(i.data) && i.status === StatementExecuteStatus.Success ? [i, this.mapResult(i.data)] : i
+    );
   }
 }

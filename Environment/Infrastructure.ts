@@ -13,10 +13,10 @@ export * from './Contexts/Handlers/CommandHandler';
 export * from './Contexts/Handlers/EventHandler';
 export * from './Contexts/Handlers/PresenceHandler';
 export * from './Contexts/Handlers/PlayerHandler';
-export * from './Interface/Commands/Public/Ping-[Interface]'
-export * from './Contexts/Generators/MusicEventGenerator'
+export * from './Interface/Commands/Public/Ping-[Interface]';
+export * from './Contexts/Generators/MusicEventGenerator';
 export * from './Functions/Emoji';
-export * from './Interface/Commands/Music/Autoplay-[Interface]'
-export * from './Interface/Commands/Music/Play-[Interface]'
+export * from './Interface/Commands/Music/Autoplay-[Interface]';
+export * from './Interface/Commands/Music/Play-[Interface]';
 export * from './Interface/Config/Strings';
-export * from './Functions/Statements'
+export * from './Functions/Statements';

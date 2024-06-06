@@ -4,9 +4,7 @@ import { CommandGen, PlayerHandler, Strings, getEmoji } from '@Environment';
 const Cmd = new Strings().getJoin;
 
 export default new CommandGen({
-  SlashCommandGen: new SlashCommandBuilder()
-    .setName('join')
-    .setDescription(Cmd.Description),
+  SlashCommandGen: new SlashCommandBuilder().setName('join').setDescription(Cmd.Description),
   Execute: async (interaction) => {
     const AyumiHata = await getEmoji('AyumiHata');
     const Ayumis = await getEmoji('AyumiMessage');
@@ -43,5 +41,5 @@ export default new CommandGen({
     } catch (error) {
       console.error(error);
     }
-  },
+  }
 });

@@ -10,9 +10,9 @@ class Sharding {
     this.SystemManager = new ShardingManager('./Core/Syphia.ts', {
       token: Sharding.Token,
       totalShards: Sharding.settings.getDeveloper.TotalShards,
-      mode: "process",
+      mode: 'process',
       respawn: true,
-      execArgv: ["--import", "tsx"]
+      execArgv: ['--import', 'tsx']
     });
     this.setupEvents();
   }
@@ -21,7 +21,7 @@ class Sharding {
     this.SystemManager.on('shardCreate', (shard) => {
       Logger.warn(`[Sharding Manager] Shard ${shard.id} started.`);
     });
-  
+
     this.SystemManager.spawn();
   }
 }

@@ -27,7 +27,7 @@ export class PrivateGuildSettings {
   public async setAllSettings() {
     if (!this.hasRun) {
       await this.applyVolumesToGuilds();
-      this.hasRun = true; 
+      this.hasRun = true;
     } else {
       console.log('Settings have already been applied. Skipping...');
     }

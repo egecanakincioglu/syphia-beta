@@ -7,11 +7,7 @@ export default new CommandGen({
   SlashCommandGen: new SlashCommandBuilder()
     .setName('skipto')
     .setDescription(Cmd.Description)
-    .addIntegerOption(option =>
-      option.setName(Cmd.Options.Name)
-        .setDescription(Cmd.Options.Description)
-        .setRequired(true)
-    ),
+    .addIntegerOption((option) => option.setName(Cmd.Options.Name).setDescription(Cmd.Options.Description).setRequired(true)),
   Execute: async (interaction) => {
     const skipToIndex = interaction.options.getInteger(Cmd.Options.Name);
     const response = await interaction.deferReply({ ephemeral: false });
@@ -23,7 +19,7 @@ export default new CommandGen({
 
       const voiceChannel = member.voice.channel;
       const botVoiceChannel = interaction.guild.members.me?.voice?.channel;
-      
+
       if (botVoiceChannel && botVoiceChannel.id !== voiceChannel.id) {
         return response.edit(bold(`${Ayumis}${AyumiHata} SkipTo komutunu kullanabilmek için bot ile aynı kanalda olmalısınız!`));
       }
@@ -43,7 +39,7 @@ export default new CommandGen({
       }
 
       if (skipToIndex === 1) {
-        return response.edit(bold(`${Ayumis}${AyumiHata} ${Cmd.CurrentSong}`))
+        return response.edit(bold(`${Ayumis}${AyumiHata} ${Cmd.CurrentSong}`));
       }
 
       const song = await queue.jump(skipToIndex - 1);
@@ -52,5 +48,5 @@ export default new CommandGen({
     } catch (error) {
       console.error(error);
     }
-  },
+  }
 });

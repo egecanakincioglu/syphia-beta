@@ -42,3 +42,5 @@ Upon release, Syphia V1 will be launched on the Discord platform by the **For De
 - **Custom Type Definitions**: The system features unique type definitions and files, setting it apart from other similar systems. It doesn't resemble the typical TypeScript and JavaScript infrastructures, instead aligning more closely with Java language and principles.
 
 For now, that's all. All the information provided here pertains to the beta version. The V1 version will be far more advanced and will undoubtedly satisfy your expectations.
+
+<p align="center">Developed by Cartel & Wyntine</p>

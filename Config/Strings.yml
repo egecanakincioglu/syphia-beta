@@ -7,23 +7,23 @@
 # YAML\YML Kurallarına dikkat ettiğiniz sürece hiç bir problemle karşılaşmayacaksınız
 
 UnicodeEmojis:
-  Error: '❌'
-  Thinking: '🤔'
-  Searching: '🔎'
-  ThumbsUp: '👍🏻'
-  Page: '📄'
-  Musical: '🎶'
-  Radio: '🔘'
-  SongLenght: '—'
-  Warn: '❗️'
-  Leave: '🛑'
-  Denied: '🚫'
-  Award: '🎖'
-  CheckMark: '✅'
-  Decorator: '✶'
-  Info: '🌀'
-  Ping: '⏱️'
-  Settings: '⚙️'
+  Error: '❌'  #default
+  Thinking: '🤔' #default
+  Searching: '🔎' #default
+  ThumbsUp: '👍🏻' #default
+  Page: '📄' #default
+  Musical: '🎶' #default
+  Radio: '🔘' #default
+  SongLenght: '—' #default
+  Warn: '❗️' #default
+  Leave: '🛑' #default
+  Denied: '🚫' #default
+  Award: '🎖' #default
+  CheckMark: '✅' #default
+  Decorator: '✶' #default
+  Info: '🌀' #default
+  Ping: '⏱️' #default
+  Settings: '⚙️' #default
 
 Presence:
   Guilds: 'Guilds'

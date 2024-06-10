@@ -43,4 +43,6 @@ Upon release, Syphia V1 will be launched on the Discord platform by the **For De
 
 For now, that's all. All the information provided here pertains to the beta version. The V1 version will be far more advanced and will undoubtedly satisfy your expectations.
 
+---
+
 <p align="center">Developed by Cartel & Wyntine</p>

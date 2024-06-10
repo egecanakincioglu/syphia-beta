@@ -1,7 +1,7 @@
 {
   "author": "Cartel",
   "name": "syphia",
-  "description": "Cartel tarafından geliştirilmiştir.",
+  "description": "Cartel & Minik tarafından geliştirilmiştir.",
   "main": "Syphia.ts",
   "type": "module",
   "scripts": {

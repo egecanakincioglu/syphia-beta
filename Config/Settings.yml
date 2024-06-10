@@ -4,9 +4,9 @@
 # ========================================
 
 Developer:
-  Name: 'Cartel'
-  ID: '264241301199781891'
-  TotalShards: 1
+  Name: ''
+  ID: ''
+  TotalShards: auto
 
 Secret: ''
 
@@ -22,4 +22,4 @@ EmojiSystem:
   TargetGuild: ''
 
 Database:
-  URL: ''
+  URL: 'mongo db url koyacaksınız'

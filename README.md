@@ -45,4 +45,4 @@ For now, that's all. All the information provided here pertains to the beta vers
 
 ---
 
-<p align="center">Developed by Cartel & Wyntine</p>
+<p align="center">Developed by Cartelizm & Wyntine</p>
